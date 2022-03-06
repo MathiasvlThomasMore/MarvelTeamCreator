@@ -1,0 +1,91 @@
+.backgroundHeader {
+    height: 150px;
+    width: 100%;
+    border-radius: 0 0 50% 50%;
+    background-color: grey;
+    box-shadow: 0 0 50px red;
+    margin: auto;
+}
+
+.backgroundFooter {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%);
+    height: 6%;
+    width: 120%;
+    border-radius: 99% 99% 0 0;
+    background-color: #484848;
+    box-shadow: 0 0 50px red;
+
+}
+
+.footerText {
+
+    text-align: center;
+    margin: 20px auto;
+    color: white;
+    font-family: Marvel;
+}
+
+body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    background-image: url("backgroundBody.jpg");
+    background-repeat: no-repeat
+}
+
+.navContainer {
+    margin-top: 0;
+    float: right;
+    padding-top: 30px;
+    padding-right: 50px;
+}
+
+.navContainer li {
+    display: inline;
+    font-size: 30px;
+    font-family: Marvel;
+    padding-left: 10px;
+}
+
+.navContainer li:hover {
+    text-decoration: underline;
+}
+
+.navContainer a {
+    color: white;
+    text-decoration: none;
+}
+
+.imgHeader {
+    padding: 20px 20px 20px 50px;
+    width: 10%;
+    height: 45%;
+}
+
+.video {
+    width: 100%;
+    margin-top: 20px;
+    height: 45rem;
+    object-fit: cover;
+    z-index: -100;
+
+}
+
+.aboutUsContainer h1 {
+    font-size: 50px;
+    width: 100%;
+    font-family: Marvel;
+
+    text-align: center;
+}
+.aboutUsContainer hr{
+    width: 50%;
+}
+.aboutUsContainer p{
+    font-size: 30px;
+    text-align: center;
+    font-family: Marvel;
+}

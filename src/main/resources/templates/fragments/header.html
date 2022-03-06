@@ -1,0 +1,22 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" media="all"
+          th:href="@{/css/style.css}" href="/css/style.css"/>
+    <title>Title</title>
+</head>
+<body>
+<div class="backgroundHeader" th:fragment="header">
+    <img class="imgHeader" th:src="@{css/marvelLogo.jpg}"/>
+    <ul class="navContainer">
+        <li><a th:href="@{/home}">Home</a></li>
+        <li><a th:href="@{/teams}">Teams</a></li>
+        <li><a th:href="@{/characters}">Characters</a></li>
+        <li><a th:href="@{/about}">About</a></li>
+
+    </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Marvel" />
+<head>
+    <meta charset="UTF-8">
+    <title>About Us</title>
+    <link rel="stylesheet" type="text/css" media="all"
+          th:href="@{/css/style.css}" href="/css/style.css"/>
+</head>
+<body>
+
+<div th:replace="fragments/header::header"></div>
+<div class="aboutUsContainer">
+<h1>About us</h1>
+    <hr>
+    <p>
+        Welcome to our Marvel Team Create page!
+        <br>
+        On this page you will be able to make your own Marvel team like the Avengers!
+        If you are interested in the lore of a character their will be one available for every single one!
+    </p>
+</div>
+<div th:replace="fragments/footer::footer"></div>
+
+
+</body>
+</html>
