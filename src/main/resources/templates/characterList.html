@@ -1,0 +1,32 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Marvel"/>
+<head>
+    <meta charset="UTF-8">
+    <title>Characters</title>
+    <link rel="stylesheet" type="text/css" media="all"
+          th:href="@{/css/style.css}" href="/css/style.css"/>
+    <link rel="stylesheet" th:href="@{/bootstrap.min.css}">
+    <script th:src="@{/bootstrap.min.js}"></script>
+</head>
+<body>
+<div th:replace="fragments/header::header"></div>
+
+<div class="row">
+    <div class="col-3" th:each="character:${characters}">
+
+        <div class="card">
+            <img class="card-img" th:src="@{${'/pictures/'+character.characterName+'.png'}}"/>
+            <div class="card-body">
+                <h4 class="card-title" th:text="${character.characterName}">character name</h4>
+                <a class="btn btn-primary" th:href="@{|/characterDetails/${character.id}|}">Check stats
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div th:replace="fragments/footer::footer"></div>
+</body>
+</html>

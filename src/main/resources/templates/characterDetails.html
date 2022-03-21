@@ -1,0 +1,28 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Marvel"/>
+<head>
+    <meta charset="UTF-8">
+    <title>Character Details</title>
+    <link rel="stylesheet" type="text/css" media="all"
+          th:href="@{/css/style.css}" href="/css/style.css"/>
+    <link rel="stylesheet" th:href="@{/bootstrap.min.css}">
+    <script th:src="@{/bootstrap.min.js}"></script>
+</head>
+<body>
+<div th:replace="fragments/header::header"></div>
+<div class="row">
+            <div class="col-4 text-center">
+            <img class="imgCharacterDetails" th:src="@{${'/pictures/'+character.characterName+'.png'}}"/>
+            </div>
+            <div class="col-8">
+                <h1 th:text="${character.characterName}"></h1>
+                <span class="heroText" th:if="${character.hero}">HERO</span>
+                <span class="villainText" th:unless="${character.hero}">VILLAIN</span>
+                <p th:text="${character.bio}"></p>
+            </div>
+</div>
+<div th:replace="fragments/footer::footer"></div>
+</body>
+</html>
