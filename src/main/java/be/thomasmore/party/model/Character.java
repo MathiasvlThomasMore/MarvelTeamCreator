@@ -1,7 +1,7 @@
 package be.thomasmore.party.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Collection;
 
 @Entity
 public class Character {
@@ -9,8 +9,11 @@ public class Character {
     private Integer id;
     private String characterName;
     private String powerType;
+    @Column(length = 2000)
     private String bio;
     private Boolean hero;
+    @ManyToMany(mappedBy = "characters",fetch = FetchType.LAZY)
+    private Collection<Team> teams;
 
     public Character() {
     }

@@ -1,3 +1,13 @@
+
+body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+
+    background: linear-gradient(147deg, rgba(0, 0, 0, 1) 10%, rgba(162, 140, 141, 1) 30%, rgba(255, 0, 0, 1) 50%, rgba(0, 0, 0, 1) 65%, rgba(150, 148, 148, 1) 84%) fixed;
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
 /*Header*/
 .backgroundHeader {
     height: 8rem;
@@ -6,10 +16,12 @@
     box-shadow: 0 0 50px red;
     color: white;
 }
-.navbar{
+
+.navbar {
     margin-bottom: 2.5%;
 }
-.box{
+
+.box {
     text-align: center;
 }
 
@@ -18,15 +30,21 @@
     font-family: Marvel;
     padding-left: 5%;
 }
+
 nav .navbar-nav li a {
-    color: white;!important;
+    color: white;
+!important;
 }
+
 nav .navbar-nav li a:hover {
-    color: lightgray;!important;
+    color: lightgray;
+!important;
 }
-.navbar-nav{
-   text-align: center;
+
+.navbar-nav {
+    text-align: center;
 }
+
 .imgHeader {
     width: 90%;
 }
@@ -35,12 +53,10 @@ nav .navbar-nav li a:hover {
 
 .backgroundFooter {
     position: fixed;
-    left: 0;
     bottom: 0;
-    margin: auto;
-    width: 100%;
-    height: 6%;
-    border-radius: 99% 99% 0 0;
+    width: 50%;
+    margin-left: 25%;
+    border-radius: 50% 50% 0 0;
     background-color: #484848;
     box-shadow: 0 0 50px red;
 }
@@ -52,17 +68,18 @@ nav .navbar-nav li a:hover {
     padding: 20px;
 }
 
-body {
-    overflow-x: hidden;
-    margin: 0;
-    padding: 0;
 
-    background: linear-gradient(147deg, rgba(0,0,0,1) 10%, rgba(162,140,141,1) 30%, rgba(255,0,0,1) 50%, rgba(0,0,0,1) 65%, rgba(150,148,148,1) 84%) fixed;
-
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
-
-
-
 
 .video {
     width: 100%;
@@ -73,7 +90,6 @@ body {
 }
 
 
-
 /*Characters images*/
 
 .card {
@@ -81,11 +97,12 @@ body {
     border: grey solid;
     width: 60%;
     text-align: center;
-    margin: auto;
+    margin: auto auto 30px;
     font-family: Marvel;
     font-size: 30px;
 }
-.card-body{
+
+.card-body {
     vertical-align: bottom;
 }
 
@@ -95,10 +112,11 @@ body {
 
 /*ABOUT US PAGE*/
 
-.aboutUsContainer{
+.aboutUsContainer {
     text-align: center;
     color: white;
 }
+
 .aboutUsContainer h1 {
     font-size: 50px;
     width: 100%;
@@ -109,16 +127,170 @@ body {
     font-size: 30px;
     font-family: Marvel;
 }
+
 /*Character Details*/
-.charDetailsBody{
+.charDetailsBody {
     margin-top: 100px;
 }
-.heroText{
+
+.heroText {
     color: green;
 }
-.villainText{
+
+.villainText {
     color: red;
 }
-.imgCharacterDetails{
+
+.imgCharacterDetails {
     width: 80%;
+}
+
+/*Previous and next button */
+.prevButtonDiv {
+    text-align: center;
+}
+
+.round {
+    background-color: #f1f1f1;
+    color: black;
+    font-size: 2rem;
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 50%;
+}
+
+/*Filters*/
+.filterButton {
+    font-family: Marvel;
+    color: white;
+    font-size: 2em;
+    text-decoration: none;
+    background-color: #484848;
+    padding: 20px;
+    border-radius: 50%;
+    margin: 0 20px 20px 20px;
+    box-shadow: 0 0 50px white;
+    display: inline-block;
+}
+
+.filterStyle {
+    color: white;
+    font-family: Marvel;
+    border-radius: 20%;
+    width: 100%;
+    padding: 20px;
+    background-color: #484848;
+    margin: 0 20px 20px 20px;
+}
+
+.filterOption {
+    margin: 10px;
+    width: 100%
+}
+
+.searchButton {
+    font-size: 1em;
+    padding: 10px;
+}
+
+/*Team page*/
+a.button4 {
+    display: inline-block;
+    padding: 0.3em 1.2em;
+    margin: 0 0.1em 0.1em 0;
+    border: 0.16em solid rgba(255, 255, 255, 0);
+    border-radius: 2em;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-weight: 300;
+    color: #FFFFFF;
+    text-shadow: 0 0.04em 0.04em rgba(0, 0, 0, 0.35);
+    text-align: center;
+    transition: all 0.2s;
+    font-size: 1.5rem;
+}
+
+a.button4:hover {
+    border-color: rgba(255, 255, 255, 1);
+    color: grey;
+}
+
+.createTeamButton {
+    text-align: center;
+}
+
+.teamHead h1 {
+    font-size: 4rem;
+}
+
+.teamHead {
+    text-align: center;
+    color: white;
+    font-family: 'Marvel', sans-serif;
+}
+
+.teamContainer {
+    text-align: center;
+}
+
+a.teamLinks {
+    text-decoration: none;
+    font-size: 2rem;
+    color: white;
+    background-color: grey;
+    font-family: 'Marvel';
+    margin: auto;
+    padding: 10px;
+    border-radius: 30%;
+    border: white solid;
+}
+a.teamLinks:hover{
+    color: darkred;
+}
+.teamDetailsContainer {
+    color: white;
+    font-family: 'Marvel';
+}
+
+.teamDetailsTitles {
+    text-align: center;
+}
+
+.buttonContainer {
+    text-align: center;
+}
+
+/*Team Details*/
+.teamCharacterContainer {
+    text-align: center;
+    border: double white;
+    border-radius: 20%;
+    margin: 2rem;
+    padding: 2rem;
+}
+
+.teamName {
+    font-size: 5rem;
+    text-align: center;
+    text-decoration: underline;
+    margin-bottom: 50px;
+}
+/*Login*/
+.loginScreen{
+    text-align: center;
+    color: white ;
+    font-family: Marvel;
+    margin: auto;
+}
+.formLogin{
+    margin: 25px;
+}
+.createUserButton{
+    margin-right: 20px;
+}
+.loginNameHome{
+    text-align: center;
+    color: white ;
+    font-family: Marvel;
 }

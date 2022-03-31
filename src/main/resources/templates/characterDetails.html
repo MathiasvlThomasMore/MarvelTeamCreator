@@ -9,19 +9,26 @@
           th:href="@{/css/style.css}" href="/css/style.css"/>
     <link rel="stylesheet" th:href="@{/bootstrap.min.css}">
     <script th:src="@{/bootstrap.min.js}"></script>
+    <script src="https://kit.fontawesome.com/d7f7b576cd.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <div th:replace="fragments/header::header"></div>
 <div class="row">
-            <div class="col-4 text-center">
-            <img class="imgCharacterDetails" th:src="@{${'/pictures/'+character.characterName+'.png'}}"/>
-            </div>
-            <div class="col-8">
-                <h1 th:text="${character.characterName}"></h1>
-                <span class="heroText" th:if="${character.hero}">HERO</span>
-                <span class="villainText" th:unless="${character.hero}">VILLAIN</span>
-                <p th:text="${character.bio}"></p>
-            </div>
+    <div class="col-4 text-center">
+        <img class="imgCharacterDetails" th:src="@{${'/pictures/'+character.characterName+'.png'}}"/>
+    </div>
+    <div class="col-1 prevButtonDiv" >
+        <a class="round" th:href="@{|/characterDetails/${character.id}/prev|}">&#8249;</a>
+    </div>
+    <div class="col-6">
+        <h1 th:text="${character.characterName}"></h1>
+        <span class="heroText" th:if="${character.hero}">HERO</span>
+        <span class="villainText" th:unless="${character.hero}">VILLAIN</span>
+        <p th:each="bioPart: ${character.bio.split('\\n')}" th:text="${bioPart}"></p>
+    </div>
+    <div class="col-1">
+        <a class="round"th:href="@{|/characterDetails/${character.id}/next|}">&#8250;</a>
+    </div>
 </div>
 <div th:replace="fragments/footer::footer"></div>
 </body>

@@ -8,14 +8,62 @@
     <link rel="stylesheet" type="text/css" media="all"
           th:href="@{/css/style.css}" href="/css/style.css"/>
     <link rel="stylesheet" th:href="@{/bootstrap.min.css}">
+    <script src="https://kit.fontawesome.com/d7f7b576cd.js" crossorigin="anonymous"></script>
     <script th:src="@{/bootstrap.min.js}"></script>
 </head>
 <body>
 <div th:replace="fragments/header::header"></div>
 
 <div class="row">
+    <div class="col-1">
+        <div th:unless="${filter}" class="filters">
+            <a class="filterButton" th:href="@{/characterList/filter}">Filter</a>
+        </div>
+        <div th:if="${filter}" class="filters">
+            <a class="filterButton" th:href="@{/characterList}">Close</a>
+            <form>
+                <div>
+                    <input type="submit" value="search" class="filterButton searchButton">
+                </div>
+                <div class="filterStyle">
+                    <h3>Powertype</h3>
+                    <div class="filterOption">
+                        <label for="powerType_veryweak" class="filtername">Very weak</label>
+                        <input type="radio" id="powertype_veryweak" name="filterPowerType" value="Very Weak"
+                               th:checked="${filterPowerType=='Very Weak'}">
+                    </div>
+                    <div class="filterOption">
+                    <label for="powerType_weak" class="filtername">Weak</label>
+                    <input type="radio" id="powertype_weak" name="filterPowerType" value="Weak"
+                           th:checked="${filterPowerType=='Weak'}">
+                    </div>
+                    <div class="filterOption">
+                    <label for="powerType_strong" class="filtername">Strong</label>
+                    <input type="radio" id="powertype_strong" name="filterPowerType" value="Strong"
+                           th:checked="${filterPowerType=='Strong'}">
+                    </div>
+                    <div class="filterOption">
+                    <label for="powerType_verystrong" class="filtername">Very strong</label>
+                    <input type="radio" id="powertype_verystrong" name="filterPowerType" value="Very Strong"
+                           th:checked="${filterPowerType=='Very Strong'}">
+                    </div>
+                </div>
+                <div class="filterStyle">
+                    <div class="filterOption">
+                        <label for="hero_yes" class="filtername">Hero</label>
+                        <input type="radio" id="hero_yes" name="filterHero" value="hero"
+                               th:checked="${filterHero=='hero'}">
+                    </div>
+                    <div class="filterOption">
+                        <label for="hero_no" class="filtername">Villain</label>
+                        <input type="radio" id="hero_no" name="filterHero" value="villain"
+                               th:checked="${filterHero=='villain'}">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
     <div class="col-3" th:each="character:${characters}">
-
         <div class="card">
             <img class="card-img" th:src="@{${'/pictures/'+character.characterName+'.png'}}"/>
             <div class="card-body">
