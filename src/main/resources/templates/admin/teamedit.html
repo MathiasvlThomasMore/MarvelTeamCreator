@@ -14,6 +14,7 @@
 <div th:replace="fragments/header::header"></div>
 
 <div class="row teamDetailsContainer" th:object="${team}" th:if="${team}">
+
     <form th:action="@{|/admin/teamedit/*{id}|}" method="post">
         <div class="row">
             <div class="col-4 teamDetailsTitles">
@@ -21,7 +22,9 @@
             </div>
             <div class="col-8">
                 <input id="teamName" th:field="*{teamName}" th:errorclass="fieldError">
+                <div class="error" th:if="${#fields.hasErrors('*')}">ERROR - data is not saved</div>
             </div>
+
         </div>
         <div class="row">
             <div class="col-4 teamDetailsTitles">
@@ -50,12 +53,6 @@
             </div>
         </div>
         </th:block>
-        <label class="infoLineName">characters: </label>
-        <div class="infoLineValue">
-                        <span th:each="character:*{characters}" th:text="|${character.characterName} |">
-                            character
-                        </span>
-        </div>
         <div class="col-12 buttonContainer">
             <a th:href="@{|/teamDetails/*{id}|}" class="button4">cancel</a>
             <a class="button4"><input type="submit" value="save"></a>

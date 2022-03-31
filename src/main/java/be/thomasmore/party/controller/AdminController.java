@@ -10,6 +10,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.Optional;
 
 @Controller
@@ -32,21 +33,21 @@ public class AdminController {
     }
 
     @GetMapping("/teamedit/{id}")
-    public String partyEdit(Model model,
+    public String teamEdit(Model model,
                             @PathVariable int id) {
         model.addAttribute("teams", teamRepository.findAll());
         model.addAttribute("characters", characterRepository.findAll());
         return "admin/teamedit";
     }
     @PostMapping("/teamedit/{id}")
-    public String partyEditPost(Model model,
+    public String teamEditPost(Model model,
                                 @PathVariable int id,
-                                @Validated @ModelAttribute("team") Team team,
+                                @Valid @ModelAttribute("team") Team team,
                                 BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             model.addAttribute("teams", teamRepository.findAll());
             model.addAttribute("characters", characterRepository.findAll());
-            return "admin/partyedit";
+            return "admin/teamedit";
         }
         teamRepository.save(team);
         return "redirect:/teamDetails/" + id;
@@ -61,7 +62,7 @@ public class AdminController {
 
     @PostMapping("/teamnew")
     public String teamNewPost(Model model,
-                               @Validated @ModelAttribute("team") Team team,
+                               @Valid @ModelAttribute("team") Team team,
                                BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             model.addAttribute("team", new Team());

@@ -30,6 +30,10 @@ insert into CHARACTER (ID, CHARACTER_NAME, POWER_TYPE, BIO, HERO)
 values (8, 'Red Skull', 'Weak',
         'Johann Schmidt is the former head of HYDRA, the special weapons division of the Nazi Schutzstaffel and a modern-day incarnation of the ancient society. Having become a confidant of Adolf Hitler during World War II, Schmidt gained ambitions to become the superior man, leading him to test the version of Abraham Erskine''s Super Soldier Serum on himself, resulting with him becoming hideously disfigured as well as gaining the name of Red Skull. While he led HYDRA, Red Skull had found the Tesseract which he had believed could help him to control the world. However, Red Skull''s plans were challenged by the Allies'' only super soldier, Captain America, who destroyed the HYDRA facilities. Once Red Skull had launched his offensive, intending to bring the United States down onto its knees, he was intercepted by Captain America and then vanished into a wormhole as he touched the Tesseract with his bare hands.',
         false);
+insert into CHARACTER (ID, CHARACTER_NAME, POWER_TYPE, BIO, HERO)
+values (9, 'Daredevil', 'Strong',
+        'Daredevil (Matt Murdock) is a fictional character appearing in American comic books published by Marvel Comics. Daredevil was created by writer-editor Stan Lee and artist Bill Everett, with an unspecified amount of input from Jack Kirby. The character first appeared in Daredevil #1 (April 1964). Writer/artist Frank Miller''s influential tenure on the title in the early 1980s cemented the character as a popular and influential part of the Marvel Universe. Daredevil is commonly known by such epithets as "Hornhead","The Man Without Fear" and "The Devil of Hell''s Kitchen".',
+        true);
 
 
 insert into team(ID, description, team_name)

@@ -1,6 +1,7 @@
 package be.thomasmore.party.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import java.util.Collection;
 
 @Entity
@@ -10,6 +11,7 @@ public class Team {
     @Id
     private Integer id;
     @Column(length = 100)
+    @NotBlank
     private String teamName;
     private String description;
     @ManyToMany(fetch = FetchType.LAZY)
