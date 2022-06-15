@@ -17,6 +17,9 @@ public class Team {
     @ManyToMany(fetch = FetchType.LAZY)
     private Collection<Character> characters;
 
+    @OneToOne(fetch = FetchType.LAZY)
+    private User user;
+
     public Team() {
     }
 
@@ -50,5 +53,13 @@ public class Team {
 
     public void setCharacters(Collection<Character> character) {
         this.characters = character;
+    }
+
+    public User getUser() {
+        return user;
+    }
+    
+    public void setUser(User user) {
+        this.user = user;
     }
 }

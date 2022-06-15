@@ -11,10 +11,11 @@ import java.util.Optional;
 public interface CharacterRepository extends CrudRepository<Character, Integer> {
     @Query("SELECT c from Character c where " +
             "(:powerType is null or c.powerType=:powerType) AND " +
-            "(:hero is null or c.hero=:hero)"
-    )
+            "(:hero is null or c.hero=:hero) AND "+
+            "(:villain is null or c.villain=:villain)")
     List<Character> findByFilter(@Param("powerType") String powerType,
-                                 @Param("hero") Boolean hero
+                                 @Param("hero") Boolean hero,
+                                 @Param("villain") Boolean villain
     );
 
     Optional<Character> findFirstByIdLessThanOrderByIdDesc(Integer id);

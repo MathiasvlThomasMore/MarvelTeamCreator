@@ -15,7 +15,8 @@
 <div th:replace="fragments/header::header"></div>
 
 <div class="row">
-    <div class="col-1">
+    <h1 class="titleLogin">Characters</h1>
+    <div class="col-2">
         <div th:unless="${filter}" class="filters">
             <a class="filterButton" th:href="@{/characterList/filter}">Filter</a>
         </div>
@@ -51,13 +52,13 @@
                 <div class="filterStyle">
                     <div class="filterOption">
                         <label for="hero_yes" class="filtername">Hero</label>
-                        <input type="radio" id="hero_yes" name="filterHero" value="hero"
-                               th:checked="${filterHero=='hero'}">
+                        <input type="radio" id="hero_yes" name="filterHero" value="yes"
+                               th:checked="${filterHero=='yes'}">
                     </div>
                     <div class="filterOption">
                         <label for="hero_no" class="filtername">Villain</label>
-                        <input type="radio" id="hero_no" name="filterHero" value="villain"
-                               th:checked="${filterHero=='villain'}">
+                        <input type="radio" id="hero_no" name="filterHero" value="no"
+                               th:checked="${filterHero=='no'}">
                     </div>
                 </div>
             </form>

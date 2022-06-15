@@ -1,6 +1,6 @@
 <!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+      xmlns:th="http://www.thymeleaf.org"  xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Marvel"/>
 <head>
     <meta charset="UTF-8">
@@ -27,7 +27,7 @@
             <h2 th:text="*{description}">description</h2>
         </div>
         <div class="col-2 createTeamButton">
-            <a th:href="@{|/admin/teamedit/*{id}|}" class="button4" style="background-color:#f14e4e">Edit team</a>
+            <a sec:authorize="isAuthenticated()" th:href="@{|/user/teamedit/*{id}|}" class="button4" style="background-color:#f14e4e">Edit team</a>
         </div>
     </div>
     <h2>Characters: </h2>

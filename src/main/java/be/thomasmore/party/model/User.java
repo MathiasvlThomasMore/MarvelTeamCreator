@@ -1,15 +1,19 @@
 package be.thomasmore.party.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+
 @SuppressWarnings("JpaDataSourceORMInspection")
 @Entity
-@Table(name = "PARTYUSER")
+@Table(name = "USER")
 public class User {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_generator")
     @SequenceGenerator(name = "user_generator", sequenceName = "user_seq", allocationSize = 1)
     @Id
     private Integer id;
+    @NotBlank
     String username;
+    @NotBlank
     String password;
     String role;
 

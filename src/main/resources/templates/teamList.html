@@ -1,6 +1,6 @@
 <!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+      xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Marvel"/>
 <head>
     <meta charset="UTF-8">
@@ -13,13 +13,16 @@
 </head>
 <body>
 <div th:replace="fragments/header::header"></div>
-<div class="row ">
+<div class="row">
     <div class="row teamHead">
-        <div class="col-10">
-            <h1>Teams</h1>
+        <div sec:authorize="isAuthenticated()" class="col-10">
+            <h1 class="titleLogin">Teams</h1>
         </div>
-        <div class="col-2 createTeamButton">
-            <a th:href="@{|/admin/teamnew|}" class="button4" style="background-color:#f14e4e">Create team</a>
+        <div sec:authorize="!isAuthenticated()" class="col-12">
+            <h1 class="titleLogin">Teams</h1>
+        </div>
+        <div  sec:authorize="isAuthenticated()" class="col-2 createTeamButton">
+            <a  th:href="@{|/user/teamnew|}" class="button4" style="background-color:#f14e4e">Create team</a>
         </div>
     </div>
     <div class="col-4 teamContainer"  th:each="team:${teams}">
@@ -28,7 +31,6 @@
             </a>
     </div>
 </div>
-
 <div th:replace="fragments/footer::footer"></div>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
-<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Marvel" />
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Marvel"/>
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" media="all"
@@ -15,21 +15,18 @@
 <div th:replace="fragments/header::header"></div>
 <div class="row">
     <div class="col-3 loginScreen">
-        <h1>Login</h1>
-        <form>
+        <h1 class="titleLogin">Login</h1>
+        <form th:action="@{|/user/login|}" method="post">
             <div class="row formLogin">
-            <label><b>Username</b></label>
-            <input type="text" placeholder="Enter Username" name="uname" required>
+                <label class="labelLogin" for="username"><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" name="username" id="username" required>
             </div>
             <div class="row formLogin">
-            <label><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="psw" required>
+                <label class="labelLogin" for="password"><b>Password</b></label>
+                <input id="password" type="password" placeholder="Enter Password" name="password" required>
             </div>
             <div class="row formLogin">
-            <button type="submit">Login</button>
-            <label>
-                <input type="checkbox" checked="checked" name="remember"> Remember me
-            </label>
+                <button class="submitButton"  type="submit">Login</button>
             </div>
         </form>
     </div>

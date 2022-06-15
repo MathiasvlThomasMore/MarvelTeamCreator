@@ -13,7 +13,7 @@ public class HomeController {
     private Logger logger = LoggerFactory.getLogger(HomeController.class);
     @GetMapping({"/", "/home"})
     public String home(Model model, Principal principal) {
-        final String loginName = (principal != null) ? principal.getName():"Nobody";
+        final String loginName = (principal != null) ? principal.getName():"Niemand";
         model.addAttribute("loginName", loginName);
         logger.info("Login @home = "+loginName);
         return "home";

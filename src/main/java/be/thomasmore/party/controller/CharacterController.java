@@ -30,12 +30,14 @@ public class CharacterController {
     @GetMapping({"/characterList/filter"})
     public String characterFilter(Model model,
                                   @RequestParam(required = false) String filterPowerType,
-                                  @RequestParam(required = false) String filterHero) {
-        List<Character> characters = characterRepository.findByFilter(filterPowerType, filterStringToBoolean(filterHero));
+                                  @RequestParam(required = false) String filterHero,
+                                  @RequestParam(required = false) String filterVillain) {
+        List<Character> characters = characterRepository.findByFilter(filterPowerType, filterStringToBoolean(filterHero),filterStringToBoolean(filterVillain));
         model.addAttribute("filter", true);
         model.addAttribute("characters", characters);
         model.addAttribute("filterPowerType", filterPowerType);
         model.addAttribute("filterHero", filterHero);
+        model.addAttribute("filterVillain",filterVillain);
         logger.info(String.format("characterfilter: powertype=%s,hero=%s", filterPowerType, filterHero));
         return "characterList";
     }

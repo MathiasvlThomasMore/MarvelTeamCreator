@@ -30,8 +30,6 @@ public class TeamController {
         if (optionalTeam.isPresent()) {
             model.addAttribute("team", optionalTeam.get());
         }
-
-
         return "teamDetails";
     }
 }
